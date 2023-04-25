@@ -43,15 +43,15 @@ export default function Navbar(props) {
 
                 <ul className= {`md:flex md:items-center md:ml-[0px]  font-bold md:pb-0 ml-[-90px]  md:static md:z-auto z-[-1]  md:w-auto duration-500 ease-in gap-8  uppercase text-gray-800 text-xs block  `}>
 
-                    <li className=' hover:text-gray-400 duration-500 ' ><Link to='/'>Home</Link></li>
-                    <li className=' hover:text-gray-400 duration-500 '><Link to='/services'>Services</Link></li>
-                    <li className=' hover:text-gray-400 duration-500 '><Link to='/about'>About</Link></li>
+                    <li className='transition duration-300 ease-in-out hover:scale-125' ><Link className='hover:text-red-400 hover:no-underline' to='/'>Home</Link></li>
+                    <li className='transition duration-300 ease-in-out hover:scale-125'><Link className='hover:text-red-400  hover:no-underline' to='/services'>Services</Link></li>
+                    <li className='transition duration-300 ease-in-out hover:scale-125'><Link className='hover:text-red-400  hover:no-underline' to='/about'>About</Link></li>
                     {/* <li className=' hover:text-gray-400 duration-500 '><Link to='/singUp'>Sing Up</Link></li> */}
-                    <li className=' hover:text-gray-400 duration-500 '><Link to='/contact'>Contact</Link></li>
-                    {!localStorage.getItem('token')?<li className=' hover:text-gray-400 duration-500  bg-gray-800 text-[white] p-1 px-3 shadow-none rounded-lg '><Link to='/login'>Login</Link></li> : <Link className='bg-gray-800 text-[white] p-1 px-3 shadow-none rounded-lg'  onClick={handleLogout } >Logout</Link> }
+                    <li className='transition duration-300 ease-in-out hover:scale-125 '><Link className='hover:text-red-400 hover:no-underline ' to='/contact'>Contact</Link></li>
+                    {!localStorage.getItem('token')?<li className='    bg-gray-800 text-[white] p-1 px-3   focus:bg-[white] shadow-none  transition duration-500  ease-in-out uppercase hover:scale-125 rounded-lg '><Link className='hover:text-white hover:no-underline ' to='/login'> <span className=''>Login</span> </Link></li> : <button className='bg-gray-800 focus:bg-[white]  uppercase text-[white] p-1 px-3 shadow-none rounded-lg transition duration-300 ease-in-out hover:scale-125'  onClick={handleLogout } >Logout</button> }
 
                     <div className='md:flex md:items-center  '>
-                    {!localStorage.getItem('token')? null:<><img className='md:h-[30px] h-[0px] ' src={loginIcon} alt="" /><span className='px-2 ' >{localStorage.getItem('email')}</span></>}
+                    {!localStorage.getItem('token')? null:<><Link to='/profile'><img className='md:h-[30px] transition duration-300 ease-in-out hover:scale-150 h-[0px] ' src={loginIcon} alt="" /> </Link><span className='px-2 ' > {localStorage.getItem('name')}  </span></>}
                 </div>
                 </ul>
 
@@ -72,7 +72,7 @@ export default function Navbar(props) {
 
                 <ul className={` duration-500 bg md:hidden text-white text-center bg-gray-800 mt-[88px] font-[Poppins] text-lg w-full h-full fixed ${toggle ? 'left-0' :'left-[-100%]' }`}>
                 <div className=' justify-center mt-4 flex'>
-                    {!localStorage.getItem('token')? null:<><img className='h-[30px] ' src={loginIcon} alt="" /><span className='flex text-center text-[#ffc130]' >{localStorage.getItem('email')}</span></>}
+                    {!localStorage.getItem('token')? null:<><Link to='/profile' onClick={onChange}><img className='h-[30px] ' src={loginIcon} alt="" /></Link><span className='flex text-center text-[#ffc130]' >{localStorage.getItem('email')}</span></>}
                 </div>
                     <li className=' hover:text-gray-400 md:my-0 my-7 ' onClick={onChange}><Link to='/'>Home</Link></li>
                     <li className=' hover:text-gray-400 md:my-0 my-7 ' onClick={onChange}><Link to='/services'>Services</Link></li>

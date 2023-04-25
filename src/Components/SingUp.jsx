@@ -7,12 +7,13 @@ export default function SingUp(props) {
     const [credentials,setCredentials] = useState({name: "" , email : "" , password : "" ,cpassword : ""});
     let navigate = useNavigate();
 
-    const host = "https://inotebookbackend-production.up.railway.app"
+    const host = "https://inotebookbackend-production.up.railway.app" || "http://localhost:5000"
 
 
     const handalSubmit = async (e) =>{
         e.preventDefault();
         const {name , email ,password} = credentials;
+
         const response = await fetch(`${host}/api/auth/createuser`,{
             method:"POST",
             headers :{
@@ -21,22 +22,29 @@ export default function SingUp(props) {
           body : JSON.stringify({name, email ,password} )
           })
           const json = await response.json()
-
-          if(json.success){
-            localStorage.setItem('token' , json.authtoken)
-            navigate("/")
-            toast('SingUp Successfully')
-            localStorage.setItem('email', credentials.email)
+          
             
-          }
-          else{
-            toast("Already login" )
-          }
+            if (json.success){
+  
+                localStorage.setItem('token' , json.authtoken)
+                navigate("/")
+                toast('SingUp Successfully')
+                localStorage.setItem('name', credentials.name)
+            }
+            else{
+              toast("Already login" )
+            }
+          
+          
     }
 
     const onChange = (e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value})
     }
+
+
+
+   
 
   return (
     <div className='grid grid-cols-1 sm:grid-cols-1 h-screen w-full md:mb-[0px] mb-[-22px]'>

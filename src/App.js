@@ -9,6 +9,7 @@ import Services from "./Components/Services";
 import NoteState from "./context/notes/NoteState";
 import  { Toaster } from 'react-hot-toast';
 import Footer from "./Components/Footer";
+import Profile from "./Components/Profile";
 
 
 
@@ -41,6 +42,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/singUp" element={<SingUp />} />
       <Route path="/contact" element={<Contact/>} />
+      <Route path="/profile" element={<Profile/>} />
     </Routes>
     </NoteState>
     <Footer/>

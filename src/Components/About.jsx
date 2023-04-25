@@ -1,9 +1,10 @@
 import React from 'react'
+import ShowWether from './Wether/ShowWether'
 
 const About = () => {
   return (
     <div className=''>
-      About Page
+      <ShowWether />
     </div>
   )
 }

@@ -40,13 +40,10 @@ export default function Home() {
         <div className="  col-span-2 p-10 flex flex-col justify-center">
           <h1 className='text-gray-800 font-bold my-2'>LEAR FROM EXPERT</h1>
           <p className='my-2  text-justify'>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            sit eos ipsum perferendis rem maxime facere magni numquam corporis
-            commodi pariatur, voluptatum eaque maiores eveniet dolore fuga ea
-            consequatur ut?
+              You can use the apps to keep a record of things you need to do and clear some head space for other equally important thoughts.
           </p>
-          <br />
-          <button className='w-[50%]  md:w-[30%]  bg-black text-white p-2 rounded'>Get Started</button>
+          <br/>
+          <button className='w-[50%]   md:w-[30%]  bg-black text-white p-2 rounded'>Get Started</button>
         </div>
       </div>
 

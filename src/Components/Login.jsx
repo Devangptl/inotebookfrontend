@@ -7,7 +7,7 @@ export default function Login(props) {
     const [credentials,setCredentials] = useState({email : "" , password : ""});
     let navigate = useNavigate();
 
-    const host = "https://inotebookbackend-production.up.railway.app"
+    const host = "https://inotebookbackend-production.up.railway.app" || "http://localhost:5000"
 
 
     const handalSubmit = async (e) =>{
