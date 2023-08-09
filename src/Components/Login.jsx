@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link , useNavigate  } from 'react-router-dom'
 import toast from 'react-hot-toast';
-
 export default function Login(props) {
 
     const [credentials,setCredentials] = useState({email : "" , password : ""});
@@ -58,6 +57,8 @@ export default function Login(props) {
                 <button  className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>Log In</button>
               
                 <p className=' text-white font-semibold text-center'>Create a account ? <span className='text-blue-600'><Link to="/singUp">Sing Up</Link></span></p>
+                
+
             </form>
         </div>
     </div>
